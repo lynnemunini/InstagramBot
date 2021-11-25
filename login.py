@@ -1,6 +1,5 @@
 import time
 import os
-
 from selenium.webdriver.common.by import By
 
 
@@ -32,8 +31,15 @@ class LoginPage:
         requests = self.driver.find_element(By.CSS_SELECTOR, "#react-root > section > nav > div._8MQSO.Cx7Bp > div > div > div.ctQZg.KtFt3 > div > div:nth-child(5) > div > div.uo5MA._2ciX.tWgj8.XWrBI > div._01UL2 > div > div > div > div.PUHRj.eKc9b.H_sJK > div.iTMfC > div > span > svg")
         requests.click()
         time.sleep(5)
-        requests = self.driver.find_elements(By.XPATH, "//button[.='Confirm']")
-        for request in requests:
+        requests_follow = self.driver.find_elements(By.XPATH, "//button[.='Confirm']")
+        for request in requests_follow:
             request.click()
+            time.sleep(2)
+
+        # follows = self.driver.find_elements(By.XPATH, "//button[.='Follow']")
+        follows = self.driver.find_elements(By.CLASS_NAME, "iTMfC")
+        # print(len(follows))
+        for follow in follows:
+            follow.click()
             time.sleep(2)
 
