@@ -22,3 +22,18 @@ class LoginPage:
         not_now_in = self.driver.find_element(By.CSS_SELECTOR, "body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC >"
                                                           " button.aOOlW.HoLwm")
         not_now_in.click()
+        time.sleep(5)
+        self.follow()
+
+    def follow(self):
+        activity = self.driver.find_element(By.CSS_SELECTOR, "#react-root > section > nav > div._8MQSO.Cx7Bp > div > div > div.ctQZg.KtFt3 > div > div:nth-child(5) > a > svg")
+        activity.click()
+        time.sleep(5)
+        requests = self.driver.find_element(By.CSS_SELECTOR, "#react-root > section > nav > div._8MQSO.Cx7Bp > div > div > div.ctQZg.KtFt3 > div > div:nth-child(5) > div > div.uo5MA._2ciX.tWgj8.XWrBI > div._01UL2 > div > div > div > div.PUHRj.eKc9b.H_sJK > div.iTMfC > div > span > svg")
+        requests.click()
+        time.sleep(5)
+        requests = self.driver.find_elements(By.XPATH, "//button[.='Confirm']")
+        for request in requests:
+            request.click()
+            time.sleep(2)
+
